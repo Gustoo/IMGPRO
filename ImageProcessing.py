@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 import streamlit as st
-from cv2 import dnn_superres
+#from cv2 import dnn_superres
 import imutils
 import zipfile
 import os
@@ -53,7 +53,7 @@ def radioF():
 
     elif type == "Increase Image Resolution":
         st.write("You select Increase Image Resolution")
-        Increase_image_resolution(image)
+        #Increase_image_resolution(image)
 
     else :
         st.write("i like this software.")
@@ -101,26 +101,26 @@ def uploadimg():
         opencv_image = cv2.imdecode(file_bytes, 1)
         #st.image(opencv_image, channels="BGR")
         return opencv_image
-def Increase_image_resolution(image):
-    try:
-        #"bilinear","bicubic"
-        algorithm = "bilinear"
-        # 放大比例，可输入值2，3，4
-        scale = 2
-        original_img = image.copy()
-        sr = dnn_superres.DnnSuperResImpl_create()
-        if algorithm == "bilinear":
-            img_new = cv2.resize(image, None, fx=scale, fy=scale, interpolation=cv2.INTER_LINEAR)
-        elif algorithm == "bicubic":
-            img_new = cv2.resize(image, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
-        else:
-            print("Algorithm not recognized")
-
-        cv2.imwrite("bilinear.jpg", img_new)
-        downloadimg('bilinear.jpg','.jpg')
-
-    except:
-        st.error("Please upload a picture")
+# def Increase_image_resolution(image):
+#     try:
+#         #"bilinear","bicubic"
+#         algorithm = "bilinear"
+#         # 放大比例，可输入值2，3，4
+#         scale = 2
+#         original_img = image.copy()
+#         sr = dnn_superres.DnnSuperResImpl_create()
+#         if algorithm == "bilinear":
+#             img_new = cv2.resize(image, None, fx=scale, fy=scale, interpolation=cv2.INTER_LINEAR)
+#         elif algorithm == "bicubic":
+#             img_new = cv2.resize(image, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+#         else:
+#             print("Algorithm not recognized")
+#
+#         cv2.imwrite("bilinear.jpg", img_new)
+#         downloadimg('bilinear.jpg','.jpg')
+#
+#     except:
+#         st.error("Please upload a picture")
 def Image_Compression(image):
     try:
         message = st.text_input("Please enter a zoom ratio(0.1-1)")
