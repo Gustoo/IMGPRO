@@ -53,3 +53,4 @@ urllib3==1.26.12
 validators==0.20.0
 watchdog==2.1.9
 zipp==3.10.0
+opencv-python==4.4.0.46
