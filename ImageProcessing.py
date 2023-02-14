@@ -8,7 +8,7 @@ import zipfile
 import os
 def show():
     st.title('Collection of image processing tools')
-    st.write("""By Gusto""")
+    st.write("""By Ian&Gusto""")
     st.info("This software is used to process the uploaded image,"
             "Features include: Object Counting, Image Format Conversion,"
             "Image Compression,Convert To Jiugongge Image,Increase Image Resolution."
